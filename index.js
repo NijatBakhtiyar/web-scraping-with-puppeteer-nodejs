@@ -6,13 +6,22 @@ async function start() {
   const page = await browser.newPage();
   await page.goto("https://learnwebcode.github.io/practice-requests/");
 
-  const names = await page.evaluate(() => {
-    const content = Array.from(document.querySelectorAll(".info strong"));
-    return content.map((strong) => strong.textContent);
+  //   const names = await page.evaluate(() => {
+  //     const content = Array.from(document.querySelectorAll(".info strong"));
+  //     return content.map((strong) => strong.textContent);
+  //   });
+  //     await fs.writeFile("names.txt", names.join("\n"));
+
+  const photos = await page.$$eval("img", (imgs) => {
+    return imgs.map((img) => img.src);
   });
 
-  await fs.writeFile("names.txt", names.join("\n"));
-  await browser.close();
+  for (const photo of photos) {
+    const imagePage = await page.goto(photo);
+    await fs.writeFile(photo.split("/").pop(), await imagePage.buffer());
+  }
+
+  //   await browser.close();
 }
 
 start();
