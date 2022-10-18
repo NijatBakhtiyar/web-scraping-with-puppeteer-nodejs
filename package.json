@@ -1,0 +1,24 @@
+{
+  "name": "web-scraping-with-puppeteer-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NijatBakhtiyar/web-scraping-with-puppeteer-nodejs.git"
+  },
+  "keywords": [],
+  "author": "nijatbakhtiyar@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NijatBakhtiyar/web-scraping-with-puppeteer-nodejs/issues"
+  },
+  "homepage": "https://github.com/NijatBakhtiyar/web-scraping-with-puppeteer-nodejs#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20",
+    "puppeteer": "^19.0.0"
+  }
+}
